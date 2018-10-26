@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>add_user</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+</head>
+<body class="container" style="margin:50px">
+<div class="row col-sm-6"
+     style="border: 1px ridge #003312; padding:20px; float: none; margin: 0 auto;">
+    <h5 class="text-center" style="font-size: 25px">Регистрация</h5>
+    <form  id="register" action="/insert_user" method="post">
+
+        <div class="form-group">
+            <label for="name">Имя: </label>
+            <input type="text" class="form-control" required id="name" placeholder="Введите имя" name="name"/>
+        </div>
+        <div class="form-group">
+            <label for="login">Логин: </label>
+            <input type="text" class="form-control"  required id="login" placeholder="Введите логин" name="login"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль: </label>
+            <input type="password" class="form-control"  required id="password" placeholder="Введите пароль" name="password"/>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">ОК</button>
+    </form>
+</div>
+</body>
+</html>

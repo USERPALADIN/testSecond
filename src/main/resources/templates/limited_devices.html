@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>limited_devices</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link th:href="@{/css/aplikasi.css}" type="text/css" rel="stylesheet"/>
+    <link th:href="@{/css/tabs.css}" type="text/css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div style="margin-left:18%">
+    <div class="notebook">
+        <p class="text-center">Таблица общих  устройств</p>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Серийный номер</th>
+                    <th scope="col">Тип</th>
+                    <th scope="col">Описание</th>
+                    <th scope="col">Дата</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="device : ${devices}">
+                    <td th:text="${device.serialNo}">Серийный номер</td>
+                    <td th:text="${device.type}">Тип</td>
+                    <td th:text="${device.description}">Описание</td>
+                    <td th:text="${device.date}">Дата</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div style="margin-left:18%">
+    <div class="notebook">
+        <p class="text-center">Топ пользователи</p>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Пользователь</th>
+                    <th scope="col">Количество деталей</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="owner : ${users}">
+                    <td th:text="${owner.getKey()}">Пользователь</td>
+                    <td th:text="${owner.getValue()}">Количество деталей</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
