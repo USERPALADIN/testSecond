@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+
+</head>
+
+<body>
+<th:block th:fragment="main-panel">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <a class="navbar-brand" href="/registry/devices">Мои устройства</a>
+        <a class="navbar-brand" href="/registry/devices/add">Добавить устройство</a>
+        <a class="navbar-brand" href="/registry/stats">Последние устройства</a>
+
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+
+            <form th:action="@{/logout}" method="post">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Выйти</button>
+            </form>
+        </div>
+    </nav>
+</th:block>
+</body>
+</html>

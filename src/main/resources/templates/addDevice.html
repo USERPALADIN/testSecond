@@ -1,15 +1,21 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>add_device</title>
+
     <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link th:href="@{/css/aplikasi.css}" type="text/css" rel="stylesheet"/>
+    <link th:href="@{/css/tabs.css}" type="text/css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body class="container" style="margin:50px">
+<div th:replace="fragments/htmlFragments::main-panel"></div>
+
 <div class="row col-sm-6"
      style="border: 1px ridge #003312; padding:20px; float: none; margin: 0 auto;">
-    <h5 class="text-center" style="font-size: 25px">Добавление устройства</h5>
     <form  id="register" action="/registry/devices/add" method="post">
 
         <div class="form-group">
